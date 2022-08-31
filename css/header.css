@@ -1,0 +1,207 @@
+body{
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color: #f9fcfe;
+  }
+  header{
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+  }
+  header::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    border: 1px solid #ccc;
+    left:0;
+    top: 27px;
+    z-index: 1;
+    box-sizing: border-box;
+  }
+  header div.inner{ /* 하위선택자  */
+    display: flex;
+    justify-content: space-between;
+    height: 88px;
+    align-items: center;
+    position: relative;
+    margin-top: 28px;
+  }
+  
+  header .inner,
+  header .inner>*{ /* > 자식선택자를 의미 */
+  /*! border: 1px solid #333; */
+  }
+  header .inner {
+      
+    }
+    header .inner h1 {
+      
+    }
+    header .inner h1 a {
+    background-image: url(../img/logo-pc.png);
+    width: 142px;
+    height: 35px;
+    display: block;
+    font-size: 0;
+    /*! padding: 20px 0; */
+    }
+  
+    header .inner ul.gnb {
+    display: flex;
+    /*! gap: 15px; */
+    align-self: flex-start;
+    }
+      header .inner ul.gnb::before{
+    content: "";
+    background-color: white;
+    width: 105%;
+    height: 0px;
+    position: absolute;
+    left: -2.5%;
+    top: -28px;
+    z-index: -1;
+    transition: all 1s; 
+    }
+    header .inner ul.gnb::after {
+      content: "";
+      width: 105%;
+      height: 0px;
+      position: absolute;
+      left: -2.5%;
+      top: 80px;
+      z-index: -1;
+      border: 1px solid #ccc;
+      display:none;
+    }
+    header .inner ul.gnb:hover::after{
+      display: block;
+    }
+    header .inner ul.gnb:hover::before{
+    height: 440px;
+    }
+    header .inner ul.gnb>li {
+      
+    }
+    header .inner ul.gnb>li>h2 a {
+    font-weight: 400;
+    padding: 20px 21px;
+    display: block;
+    /*! line-height: 3; */ /* 블럭에게만 적용되는 속성 */
+    font-size: 20px;
+    padding-top: 26.5px;
+    position: relative;
+    transition: all 0.5s;
+    }
+    header .inner ul.gnb>li:hover>h2 a{
+      color: red;
+    }
+  header .inner ul.gnb > li > h2 a::after {
+     content: "";
+     display: block;
+     width: calc(100% - 42px);
+     border-bottom: 4px solid red;
+     transform: translateY(32px)  scaleX(0);
+     position: absolute;
+     left: 21px;
+     transition: all 0.5s;
+     transform-origin: 50%;
+    }
+    header .inner ul.gnb>li:hover>h2 a::after{
+      content: "";
+      display: block;
+      width: calc(100% - 42px);
+      border-bottom: 4px solid red;
+      transform: translateY(32px)  scaleX(100%);
+      position: absolute;
+      left: 21px;
+    }
+    /* gnb서브메뉴 */
+    header .inner ul.gnb li ul.gnbsub{
+     display: none;
+    }
+    header .inner ul.gnb:hover li ul.gnbsub{
+    display: block;
+    }
+    header .inner ul.gnb:hover ul.gnbsub{
+      opacity: 0;
+      animation-name: gnbfadein;
+      animation-duration: 0.5s;
+      animation-fill-mode: forwards;
+      animation-delay: 1s;
+      margin-top: 27px;
+    }
+    @keyframes gnbfadein{
+      0%{
+        opacity: 0;
+      }
+      100%{
+        opacity: 1;
+      }
+    }
+    header .inner ul.gnb li ul.gnbsub li{
+  
+    }
+    header .inner ul.gnb li ul.gnbsub li a{
+    line-height: 2;
+    padding-left: 21px;
+    padding-right: 2px;
+    }
+  
+    header .inner ul.enb {
+      display: flex; 
+      gap: 15px;
+    }
+    header .inner ul.enb li {
+      
+    }
+    header .inner ul.enb li select {
+    background-color: transparent;
+    border: none;
+    }
+    header .inner ul.enb li select option{
+      
+    }
+    header .inner ul.enb li a{
+    font-size: 0;
+    width: 20px;
+    height: 13px;
+    display: block;
+    border-top: 3px solid #666;
+    border-bottom: 3px solid #666;
+    display: flex;
+    align-items: center;
+    }
+    header .inner ul.enb li a::before{
+    content: "";
+    /*! border-top: 3px solid #666; */
+    width: 100%;
+    display: block;
+    height: 3px;
+    background-color: #666;
+    }
+    header .inner ul.tnb{
+    position: absolute;
+    right: 0;
+    top: -23px;
+    font-size: 12px;
+    display: flex;
+    gap: 14px;
+    }
+    header .inner ul.tnb li{
+  
+    }
+    header .inner ul.tnb li a{
+  
+    }
+    header .inner ul.tnb li a::after{
+    content: "";
+      
+    background-image: url(../img/openinnew.svg);
+    width: 17px;
+    height: 17px;
+    display: inline-block;
+    background-size: contain;
+    vertical-align: -4px;
+    }
+  
+  
+  
